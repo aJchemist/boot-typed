@@ -13,10 +13,13 @@
         :clj (require 'clojure.core.typed)
         :cljs (require 'cljs.core.typed)))))
 
-(defn check [impl worker-pods namespace nsym]
+(defn Check [impl worker-pods namespace nsym]
   (let [nsym (if (seq nsym) nsym namespace)]
     (assert (seq nsym))
     (pod/with-eval-in (worker-pods :refresh)
+      (case ~impl
+        :clj (require 'clojure.core.typed)
+        :cljs (require 'cljs.core.typed))
       (let [res (try (~(case impl
                          :clj `clojure.core.typed/check-ns
                          :cljs `cljs.core.typed/check-ns*)
@@ -25,10 +28,13 @@
                        (println (.getMessage e))))]
         (prn res)))))
 
-(defn coverage [impl worker-pods namespace nsym]
+(defn Coverage [impl worker-pods namespace nsym]
   (let [nsym (if (seq nsym) nsym namespace)]
     (assert (seq nsym))
     (pod/with-eval-in (worker-pods :refresh)
+      (case ~impl
+        :clj (require 'clojure.core.typed)
+        :cljs (require 'cljs.core.typed))
       (clojure.core.typed/var-coverage '~nsym))))
 
 (core/deftask typed
@@ -39,16 +45,16 @@
    s cljs-namespace CLJS-NAMESPACE #{sym} "a list of ClojureScript namespaces to check."
    v coverage bool "basic type coverage for all namespaces declared in 'namespace'."
    y nsym NSYM #{sym} "a list of nsyms to override the namespace/cljs-namespace lists in build.boot, and for coverage."]
-  (let [worker-pods (pod/pod-pool (update-in (core/get-env) [:dependencies] into pod-deps) :init init)]
+  (let [worker-pods (pod/pod-pool (update-in (core/get-env) [:dependencies] into pod-deps))]
     (core/cleanup (worker-pods :shutdown))
     (core/with-pre-wrap fileset
       (when check
         (println "Running Clojure check...")
-        (check :clj worker-pods namespace nsym))
+        (Check :clj worker-pods namespace nsym))
       (when check-cljs
         (println "Running ClojureScript check...")
-        (check :cljs worker-pods namespace nsym))
+        (Check :cljs worker-pods namespace nsym))
       (when coverage
         (println "Running type coverage...")
-        (coverage :clj worker-pods namespace nsym))
+        (Coverage :clj worker-pods namespace nsym))
       (core/commit! fileset))))

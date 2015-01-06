@@ -22,5 +22,4 @@
       :url "https://github.com/zilti/boot-typed"
       :scm {:url "https://github.com/zilti/boot-typed"}
       :license {:name "Eclipse Public License"
-                :url "http://www.eclipse.org/legal/epl-v10.html"}}
- midje {:test-path #{"test"}})
+                :url "http://www.eclipse.org/legal/epl-v10.html"}})
