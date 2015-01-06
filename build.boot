@@ -3,7 +3,7 @@
  :source-paths #{"src"}
  :dependencies '[[org.clojure/clojure "1.6.0" :scope "provided"]
                  [boot/core "2.0.0-rc1" :scope "provided"]
-                 [org.clojure/core.typed "0.2.77"]
+                 [org.clojure/core.typed "0.2.77" :scope "provided"]
                  [adzerk/bootlaces "0.1.8" :scope "test"]])
 
 ;; For bootlace: Set env-vars CLOJARS_USER and CLOJARS_PASS
@@ -11,7 +11,7 @@
 (require '[adzerk.bootlaces :refer :all]
          '[zilti.boot-typed :refer [typed]])
 
-(def +version+ "0.0.1-SNAPSHOT")
+(def +version+ "0.1.0-SNAPSHOT")
 
 (bootlaces! +version+)
 
