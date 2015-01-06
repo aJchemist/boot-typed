@@ -3,7 +3,7 @@
 boot-typed
 ==========
 
-[![Clojars Project](https://clojars.org/zilti/boot-typed/latest-version.svg)](https://clojars.org/zilti/boot-typed)
+![Clojars Project](https://clojars.org/zilti/boot-typed/latest-version.svg)
 
 A boot task allowing you to check your project using `core.typed`.
 
