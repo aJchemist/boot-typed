@@ -11,7 +11,7 @@
 (require '[adzerk.bootlaces :refer :all]
          '[zilti.boot-typed :refer [typed]])
 
-(def +version+ "0.1.0-SNAPSHOT")
+(def +version+ "0.1.0")
 
 (bootlaces! +version+)
 
