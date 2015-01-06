@@ -24,3 +24,4 @@ Details
 - The coverage check works only for Clojure files and thus uses the namespaces defined using --namespace.
 - NSYM overrides both NAMESPACE and CLJS-NAMESPACE for check, check-cljs and coverage.
 - You may chain checks together; `boot typed --check --check-cljs --coverage` runs just fine.
+- And of course, `boot watch typed -c` and similar works as well.
