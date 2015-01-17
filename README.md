@@ -1,6 +1,6 @@
-[![License](http://img.shields.io/badge/license-LGPL-blue.svg?style=flat)](https://www.gnu.org/licenses/lgpl-3.0.en.html#content)
-[![Boot](https://img.shields.io/badge/boot-2.0.0-ECC42F.svg?style=flat)](http://boot-clj.com/)
-[![Clojars](https://img.shields.io/badge/clojars-0.1.1-blue.svg?style=flat)](https://clojars.org/zilti/boot-typed)
+[![License](//img.shields.io/badge/license-LGPL-blue.svg?style=flat)](https://www.gnu.org/licenses/lgpl-3.0.en.html#content)
+[![Boot](//img.shields.io/badge/boot-2.0.0-ECC42F.svg?style=flat)](http://boot-clj.com/)
+[![Clojars](//img.shields.io/badge/clojars-0.1.1-blue.svg?style=flat)](https://clojars.org/zilti/boot-typed)
 [![Gratipay](//img.shields.io/gratipay/zilti.svg?style=flat)](//gratipay.com/zilti)
 [![Flattr this](//api.flattr.com/button/flattr-badge-small.png)](https://flattr.com/submit/auto?user_id=zilti&url=https%3A%2F%2Fbitbucket.org%2Fzilti%2Fboot-typed)
 
