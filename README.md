@@ -1,10 +1,13 @@
 [![License](http://img.shields.io/badge/license-LGPL-blue.svg?style=flat)](https://www.gnu.org/licenses/lgpl-3.0.en.html#content)
-[![Boot](https://img.shields.io/badge/boot-2.0.0-ECC42F.svg?style=flat)](http://boot-clj.com/) [![Clojars](https://img.shields.io/badge/clojars-0.1.0-blue.svg?style=flat)](https://clojars.org/zilti/boot-typed)
+[![Boot](https://img.shields.io/badge/boot-2.0.0-ECC42F.svg?style=flat)](http://boot-clj.com/)
+[![Clojars](https://img.shields.io/badge/clojars-0.1.1-blue.svg?style=flat)](https://clojars.org/zilti/boot-typed)
+[![Gratipay](//img.shields.io/gratipay/zilti.svg?style=flat)](//gratipay.com/zilti)
+[![Flattr this](//api.flattr.com/button/flattr-badge-small.png)](https://flattr.com/submit/auto?user_id=zilti&url=https%3A%2F%2Fbitbucket.org%2Fzilti%2Fboot-typed)
 
 boot-typed
 ==========
 
-`[zilti/boot-typed "0.1.0"]`
+`[zilti/boot-typed "0.1.1"]`
 
 A boot task allowing you to check your project using `core.typed`.
 
@@ -28,3 +31,8 @@ Details
 - NSYM overrides both NAMESPACE and CLJS-NAMESPACE for check, check-cljs and coverage.
 - You may chain checks together; `boot typed --check --check-cljs --coverage` runs just fine.
 - And of course, `boot watch typed -c` and similar works as well.
+
+TODO
+----
+
+* Integration with the boot notification plugins
